@@ -6,6 +6,9 @@ This project demonstrates how to implement secure user registration, login, pass
 
 ---
 
+<img width="1024" height="559" alt="e1b205d6-1397-48a5-845f-69c761f5cf97" src="https://github.com/user-attachments/assets/f16fe855-050f-407c-9c45-9684014fa13f" />
+
+
 ## 🚀 Features
 
 * User Registration
