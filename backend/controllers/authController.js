@@ -8,7 +8,7 @@ const register = async (req, res) => {
     const { name, email, password } = req.body;
 
     // Check if user already exists
-    const existingUser = await User.findOne({ email });
+    const existingUser = await User.findOne({ email }); // This line queries the database to check if a user with the provided email already exists. If a user is found, it means that the email is already registered, and the function will return a 400 status code with an appropriate message.
 
     if (existingUser) {
       return res.status(400).json({
@@ -17,7 +17,7 @@ const register = async (req, res) => {
     }
 
     // Hash password
-    const hashedPassword = await bcrypt.hash(password, 10);
+    const hashedPassword = await bcrypt.hash(password, 10); // The number 10 here is the salt rounds, which determines how secure the hash will be. A higher number means more security but also more processing time.
 
     // Create user
     const user = await User.create({
