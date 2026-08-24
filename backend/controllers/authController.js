@@ -20,11 +20,20 @@ const register = async (req, res) => {
     const hashedPassword = await bcrypt.hash(password, 10); // The number 10 here is the salt rounds, which determines how secure the hash will be. A higher number means more security but also more processing time.
 
     // Create user
-    const user = await User.create({
+    const user = await User.create({    
       name,
       email,
       password: hashedPassword,
     });
+
+    // Both are valid ways to create a new user in MongoDB using Mongoose. The first method (User.create) is more concise and is often preferred for its simplicity, while the second method (new User() followed by save()) provides more flexibility if you need to perform additional operations before saving the user.
+    
+    // const user = new User({ 
+    //   name,
+    //   email,
+    //   password: hashedPassword,
+    // });
+    // await user.save();
 
     res.status(201).json({
       message: "User registered successfully",
