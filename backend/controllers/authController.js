@@ -27,7 +27,7 @@ const register = async (req, res) => {
     });
 
     // Both are valid ways to create a new user in MongoDB using Mongoose. The first method (User.create) is more concise and is often preferred for its simplicity, while the second method (new User() followed by save()) provides more flexibility if you need to perform additional operations before saving the user.
-    
+
     // const user = new User({ 
     //   name,
     //   email,
@@ -89,7 +89,8 @@ const login = async (req, res) => {
       }
     );
 
-    res.json({
+    // Send token in response
+    res.json({                        
       message: "Login successful",
       token,
     });
