@@ -11,8 +11,8 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-app.use("/api/auth", authRoutes);
-app.use("/api/user", userRoutes);
+app.use("/api/auth", authRoutes); // This line mounts the authRoutes on the /api/auth path, so any requests to /api/auth/register or /api/auth/login will be handled by the corresponding controller functions defined in authController.js.
+app.use("/api/user", userRoutes); // This line mounts the userRoutes on the /api/user path, so any requests to /api/user/profile or /api/user/update will be handled by the corresponding controller functions defined in userController.js.
 
 mongoose
   .connect(process.env.MONGO_URI)
