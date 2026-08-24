@@ -66,7 +66,7 @@ const login = async (req, res) => {
     }
 
     // Compare password
-    const isPasswordCorrect = await bcrypt.compare(
+    const isPasswordCorrect = await bcrypt.compare(   // This line uses bcrypt's compare function to check if the provided password matches the hashed password stored in the database. The compare function takes two arguments: the plain text password provided by the user and the hashed password retrieved from the database. It returns a boolean value indicating whether the passwords match.
       password,
       user.password
     );
@@ -78,7 +78,7 @@ const login = async (req, res) => {
     }
 
     // Create JWT
-    const token = jwt.sign(
+    const token = jwt.sign(        // This line creates a JSON Web Token (JWT) for the authenticated user. The jwt.sign() function takes three arguments: the payload (which contains user information), the secret key (used to sign the token), and an options object (which can include settings like token expiration time). In this case, the payload includes the user's ID and email, the secret key is retrieved from environment variables, and the token is set to expire in 15 minutes.
       {
         userId: user._id,
         email: user.email,
