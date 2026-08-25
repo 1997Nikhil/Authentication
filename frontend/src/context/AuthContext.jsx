@@ -7,7 +7,7 @@ export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  const isAuthenticated = !!user;
+  const isAuthenticated = !!user;     // This line creates a boolean variable isAuthenticated that indicates whether the user is authenticated or not. It uses the double negation operator (!!) to convert the user state into a boolean value. If the user state is not null (i.e., a user is logged in), isAuthenticated will be true; otherwise, it will be false.
 
   // Get current logged-in user
   const getCurrentUser = async () => {
