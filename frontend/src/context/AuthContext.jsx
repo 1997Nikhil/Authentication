@@ -39,7 +39,7 @@ export const AuthProvider = ({ children }) => {
 
   // Login
   const login = async (email, password) => {
-    const response = await api.post("/auth/login", {
+    const response = await api.post("/auth/login", {   // This line makes an HTTP POST request to the "/auth/login" endpoint of the backend API using the Axios instance (api) that was created earlier. The request includes the user's email and password in the request body, which are used by the server to authenticate the user. If the login is successful, the server will respond with a JWT token, which is then stored in local storage for future authentication. After storing the token, the function calls getCurrentUser() to retrieve and set the user's profile information in the user state. If the login fails (e.g., due to incorrect credentials), an error will be thrown, and the function will not proceed to store a token or retrieve user information.
       email,
       password,
     });
