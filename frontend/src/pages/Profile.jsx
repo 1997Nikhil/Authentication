@@ -11,7 +11,7 @@ function Profile() {
   useEffect(() => {
     const getProfile = async () => {
       try {
-        const response = await api.get(
+        const response = await api.get(    // This line makes an HTTP GET request to the "/user/profile" endpoint of the backend API using the Axios instance (api) that was created earlier. The request includes the JWT token in the Authorization header, which allows the server to verify the user's identity and return their profile information. If the request is successful, the response will contain the user's data, which is then stored in the profile state using setProfile(response.data.user). If the request fails (e.g., due to an invalid or expired token), an error will be caught, and an error message will be logged to the console.
           "/user/profile"
         );
 
