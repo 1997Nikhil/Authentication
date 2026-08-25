@@ -12,7 +12,7 @@ export const AuthProvider = ({ children }) => {
   // Get current logged-in user
   const getCurrentUser = async () => {
     try {
-      const token = localStorage.getItem("token");
+      const token = localStorage.getItem("token");   // This line retrieves the JWT token from the browser's local storage. The token is stored in local storage when the user logs in, and it is used to authenticate subsequent requests to the server. If the token is not found, it indicates that the user is not logged in, and the function will set the user state to null and loading state to false, effectively ending the authentication check.
 
       if (!token) {
         setUser(null);
