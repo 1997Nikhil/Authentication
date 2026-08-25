@@ -12,7 +12,7 @@ function ProtectedRoute({ children }) {
   }
 
   if (!isAuthenticated) {
-    return <Navigate to="/login" replace />;
+    return <Navigate to="/login" replace />;   // This line redirects the user to the login page if they are not authenticated. The "replace" prop ensures that the navigation history is replaced, preventing the user from going back to the protected route using the browser's back button.
   }
 
   return children;
