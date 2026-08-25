@@ -20,7 +20,7 @@ export const AuthProvider = ({ children }) => {
         return;
       }
 
-      const response = await api.get("/user/profile");
+      const response = await api.get("/user/profile");   // This line makes an HTTP GET request to the "/user/profile" endpoint of the backend API using the Axios instance (api) that was created earlier. The request includes the JWT token in the Authorization header, which allows the server to verify the user's identity and return their profile information. If the request is successful, the response will contain the user's data, which is then stored in the user state using setUser(response.data.user). If the request fails (e.g., due to an invalid or expired token), an error will be caught, and the user state will be set to null, indicating that the user is not authenticated.
 
       setUser(response.data.user);
     } catch (error) {
