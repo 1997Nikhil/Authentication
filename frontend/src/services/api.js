@@ -13,7 +13,7 @@ api.interceptors.request.use( // This line sets up an interceptor for outgoing H
     const token = localStorage.getItem("token");
 
     if (token) {
-      config.headers.Authorization = `Bearer ${token}`;
+      config.headers.Authorization = `Bearer ${token}`;  // This line adds the JWT token to the Authorization header of the request. The token is prefixed with "Bearer " to indicate that it is a Bearer token, which is a common way to send tokens in HTTP headers for authentication purposes.
     }
 
     return config;
