@@ -5,7 +5,7 @@ function ProtectedRoute({ children }) {
   const {
     isAuthenticated,
     loading,
-  } = useAuth();
+  } = useAuth();     // This line uses the useAuth hook to access the authentication state from the AuthContext. It retrieves the isAuthenticated and loading values, which indicate whether the user is authenticated and whether the authentication status is still being determined, respectively.
 
   if (loading) {
     return <h2>Loading...</h2>;
