@@ -44,7 +44,7 @@ export const AuthProvider = ({ children }) => {
       password,
     });
 
-    const token = response.data.token;
+    const {token} = response.data;
 
     localStorage.setItem("token", token);
 
